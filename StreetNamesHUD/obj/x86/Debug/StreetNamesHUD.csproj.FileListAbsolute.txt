@@ -1,0 +1,8 @@
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\bin\x86\Debug\ScriptHookDotNet.dll
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.csproj.AssemblyReference.cache
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.csproj.CoreCompileInputs.cache
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.csproj.CopyComplete
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\bin\x86\Debug\StreetNamesHUD.net.dll
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\bin\x86\Debug\StreetNamesHUD.net.pdb
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.net.dll
+D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.net.pdb

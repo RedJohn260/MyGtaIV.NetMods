@@ -1,0 +1,9 @@
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\bin\TestScriptCS.net.dll
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\bin\TestScriptCS.net.pdb
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\bin\NativeUI.dll
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\bin\NativeUI.xml
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\Debug\TestScriptCS.csproj.AssemblyReference.cache
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\Debug\TestScriptCS.csproj.CoreCompileInputs.cache
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\Debug\TestScriptCS.csproj.CopyComplete
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\Debug\TestScriptCS.net.dll
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\Debug\TestScriptCS.net.pdb

@@ -1,0 +1,1 @@
+xcopy /s/y D:\LocalGit\GTAIV_ScriptHookScripts\Scripts\PrivateVehicle.cs F:\SteamLibrary\steamapps\common\Grand Theft Auto IV\GTAIV\scripts

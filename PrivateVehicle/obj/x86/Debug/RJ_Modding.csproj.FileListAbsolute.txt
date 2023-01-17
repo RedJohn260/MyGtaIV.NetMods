@@ -1,0 +1,12 @@
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\bin\x86\Debug\RJ_Modding.net.dll
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\bin\x86\Debug\RJ_Modding.net.pdb
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\x86\Debug\RJ_Modding.csproj.AssemblyReference.cache
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\x86\Debug\RJ_Modding.csproj.CoreCompileInputs.cache
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\x86\Debug\RJ_Modding.net.dll
+C:\Users\RedJo\OneDrive\Desktop\TestScriptCS\obj\x86\Debug\RJ_Modding.net.pdb
+D:\LocalGit\GTAIV_ScriptHookScripts\obj\x86\Debug\RJ_Modding.csproj.AssemblyReference.cache
+D:\LocalGit\GTAIV_ScriptHookScripts\obj\x86\Debug\RJ_Modding.csproj.CoreCompileInputs.cache
+D:\LocalGit\GTAIV_ScriptHookScripts\bin\x86\Debug\PrivateVehicle.net.dll
+D:\LocalGit\GTAIV_ScriptHookScripts\bin\x86\Debug\PrivateVehicle.net.pdb
+D:\LocalGit\GTAIV_ScriptHookScripts\obj\x86\Debug\PrivateVehicle.net.dll
+D:\LocalGit\GTAIV_ScriptHookScripts\obj\x86\Debug\PrivateVehicle.net.pdb
