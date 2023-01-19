@@ -9,3 +9,14 @@ D:\LocalGit\GTAIV_ScriptHookScripts\PrivateVehicle\obj\x86\Debug\PrivateVehicle.
 D:\LocalGit\GTAIV_ScriptHookScripts\PrivateVehicle\bin\x86\Debug\ScriptHookDotNet.dll
 D:\LocalGit\GTAIV_ScriptHookScripts\PrivateVehicle\bin\x86\Debug\ScriptHookDotNet.xml
 D:\LocalGit\GTAIV_ScriptHookScripts\PrivateVehicle\bin\x86\Debug\System.Drawing.dll
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\bin\x86\Debug\PrivateVehicle.net.dll
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\bin\x86\Debug\PrivateVehicle.net.pdb
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\bin\x86\Debug\ScriptHookDotNet.dll
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\bin\x86\Debug\System.Drawing.dll
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\bin\x86\Debug\System.Windows.Forms.dll
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\bin\x86\Debug\ScriptHookDotNet.xml
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\obj\x86\Debug\PrivateVehicle.csproj.AssemblyReference.cache
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\obj\x86\Debug\PrivateVehicle.csproj.CoreCompileInputs.cache
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\obj\x86\Debug\PrivateVehicle.csproj.CopyComplete
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\obj\x86\Debug\PrivateVehicle.net.dll
+D:\LocalGit\MyGtaIV.NetMods\PrivateVehicle\obj\x86\Debug\PrivateVehicle.net.pdb

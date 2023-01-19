@@ -14,12 +14,11 @@ namespace PrivateVehicle.Scripts
         private bool vehicle_spawned = false;
         public PrivateVehicle()
         {
-            Interval = 100;
             Tick += PrivateVehicle_Tick;
             KeyDown += PrivateVehicle_KeyDown;
             GeneralInfo = "Private Vehicle Mod gives you ability to spawn your desired car with default: F3 key, remove car with default: F4 key and repair the car with default: F5 key. It also includes vehicle icon that you can find it easily.";
             Game.DisplayText("[PVM]: Private Vehicle Mod Loaded!");
-            
+            //vehicle.FreezePosition = false;
         }
 
         private void PrivateVehicle_Tick(object sender, EventArgs e)
@@ -72,6 +71,11 @@ namespace PrivateVehicle.Scripts
                 Helper.SetCarColor(vehicle, Settings.GetValueInteger("PrimaryColor", "SETTINGS", 0), Settings.GetValueInteger("SecondaryColor", "SETTINGS", 0));
                 Helper.SetExtraCarColor(vehicle, Settings.GetValueInteger("ExtraColor1", "SETTINGS", 0), Settings.GetValueInteger("ExtraColor2", "SETTINGS", 0));
                 vehicle.FreezePosition = false;
+                vehicle.CanBeDamaged= false;
+                vehicle.CanBeVisiblyDamaged= false;
+                vehicle.EngineRunning= true;
+                vehicle.Visible= true;
+                vehicle.SoundHorn(5);
                 vehicle.CanTiresBurst = false;
                 vehicle.MakeProofTo(true, true, true, true, true);
                 vehicle.Dirtyness = 0f;
@@ -92,7 +96,7 @@ namespace PrivateVehicle.Scripts
 
                 vehicle_spawned = true;
                 SaveSettings();
-                Helper.ShowSubtitle("Your personal vehicle spawned");
+                Helper.ShowSubtitle("Your private vehicle spawned");
             }
         }
 
@@ -103,13 +107,14 @@ namespace PrivateVehicle.Scripts
                 if (vehicle.Exists())
                 {
                     vehicle.Delete();
+                    vehicle.NoLongerNeeded();
                     vehicle_spawned = false;
                 }
                 if (vehicle_blip.Exists())
                 {
                     vehicle_blip.Delete();
                 }
-                Helper.ShowSubtitle("Your personal vehicle removed");
+                Helper.ShowSubtitle("Your private vehicle removed");
             }
         }
 
@@ -118,7 +123,8 @@ namespace PrivateVehicle.Scripts
             if (vehicle_spawned)
             {
                 vehicle.Repair();
-                Helper.ShowSubtitle("Your personal vehicle repaired");
+                vehicle.Wash();
+                Helper.ShowSubtitle("Your private vehicle repaired");
             }
         }
 
@@ -138,7 +144,7 @@ namespace PrivateVehicle.Scripts
                 Settings.SetValue("VehicleRotation", "COORDINATES", vehicle.Rotation);
                 Settings.SetValue("VehicleHeading", "COORDINATES", vehicle.Heading);
                 Settings.Save();
-                Game.DisplayText("[PVM]: Your personal vehicle settings saved!");
+                Game.DisplayText("[PVM]: Your private vehicle settings saved");
             }
         }
     }
