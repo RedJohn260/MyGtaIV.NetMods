@@ -1,0 +1,8 @@
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\bin\x86\Debug\TheIVCam.net.dll
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\bin\x86\Debug\TheIVCam.net.pdb
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\bin\x86\Debug\ScriptHookDotNet.dll
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\obj\x86\Debug\TheIVCam.csproj.AssemblyReference.cache
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\obj\x86\Debug\TheIVCam.csproj.CoreCompileInputs.cache
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\obj\x86\Debug\TheIVCam.csproj.CopyComplete
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\obj\x86\Debug\TheIVCam.net.dll
+D:\LocalGit\MyGtaIV.NetMods\StaticCamera\obj\x86\Debug\TheIVCam.net.pdb
