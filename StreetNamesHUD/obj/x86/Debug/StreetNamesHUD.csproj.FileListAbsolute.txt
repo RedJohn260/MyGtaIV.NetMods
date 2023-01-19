@@ -6,3 +6,10 @@ D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\bin\x86\Debug\StreetNamesHUD.
 D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\bin\x86\Debug\StreetNamesHUD.net.pdb
 D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.net.dll
 D:\LocalGit\GTAIV_ScriptHookScripts\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.net.pdb
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\bin\x86\Debug\StreetNamesHUD.net.dll
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\bin\x86\Debug\StreetNamesHUD.net.pdb
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.csproj.AssemblyReference.cache
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.csproj.CoreCompileInputs.cache
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.csproj.CopyComplete
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.net.dll
+D:\LocalGit\MyGtaIV.NetMods\StreetNamesHUD\obj\x86\Debug\StreetNamesHUD.net.pdb

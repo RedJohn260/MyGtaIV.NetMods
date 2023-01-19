@@ -33,7 +33,7 @@ namespace StreetNamesHUD.Scripts
 
         private void StreetNames_Tick(object sender, EventArgs e)
         {
-            if (Helper.CheckHUDToggle())
+            if (Player.CanControlCharacter)
             {
                 _IsHUD_ON = true;
                 CharPos = Game.LocalPlayer.Character.Position;
