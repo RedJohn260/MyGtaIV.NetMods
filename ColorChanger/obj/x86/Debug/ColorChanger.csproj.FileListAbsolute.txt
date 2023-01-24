@@ -1,0 +1,8 @@
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\bin\x86\Debug\ColorChanger.net.dll
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\bin\x86\Debug\ColorChanger.net.pdb
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\bin\x86\Debug\ScriptHookDotNet.dll
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\obj\x86\Debug\ColorChanger.csproj.AssemblyReference.cache
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\obj\x86\Debug\ColorChanger.csproj.CoreCompileInputs.cache
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\obj\x86\Debug\ColorChanger.csproj.CopyComplete
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\obj\x86\Debug\ColorChanger.net.dll
+D:\LocalGit\MyGtaIV.NetMods\ColorChanger\obj\x86\Debug\ColorChanger.net.pdb
