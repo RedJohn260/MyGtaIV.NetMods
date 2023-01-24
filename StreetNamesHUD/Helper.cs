@@ -13,7 +13,7 @@ namespace StreetNamesHUD
     {
         public static Point TextPosition(int TextPosX, int TextPosY)
         {
-            Point pos= new Point(50, Game.Resolution.Height - 30);
+            Point pos= new Point(Game.Resolution.Width - Game.Resolution.Width + 50, Game.Resolution.Height - 30);
             pos.Offset(TextPosX, TextPosY);
             return pos;
         }
