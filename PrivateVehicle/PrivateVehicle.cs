@@ -18,7 +18,6 @@ namespace PrivateVehicle.Scripts
             KeyDown += PrivateVehicle_KeyDown;
             GeneralInfo = "Private Vehicle Mod gives you ability to spawn your desired car with default: F3 key, remove car with default: F4 key and repair the car with default: F5 key. It also includes vehicle icon that you can find it easily.";
             Game.DisplayText("[PVM]: Private Vehicle Mod Loaded!");
-            //vehicle.FreezePosition = false;
         }
 
         private void PrivateVehicle_Tick(object sender, EventArgs e)
