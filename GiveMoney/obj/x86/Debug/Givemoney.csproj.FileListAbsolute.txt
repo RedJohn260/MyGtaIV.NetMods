@@ -1,0 +1,8 @@
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\bin\x86\Debug\Givemoney.net.dll
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\bin\x86\Debug\Givemoney.net.pdb
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\bin\x86\Debug\ScriptHookDotNet.dll
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\obj\x86\Debug\Givemoney.csproj.AssemblyReference.cache
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\obj\x86\Debug\Givemoney.csproj.CoreCompileInputs.cache
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\obj\x86\Debug\Givemoney.csproj.CopyComplete
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\obj\x86\Debug\Givemoney.net.dll
+D:\LocalGit\MyGtaIV.NetMods\GiveMoney\obj\x86\Debug\Givemoney.net.pdb
