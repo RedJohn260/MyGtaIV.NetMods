@@ -1,11 +1,6 @@
 ﻿using GTA;
 using GTA.Native;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TheIVCam
@@ -14,9 +9,20 @@ namespace TheIVCam
     {
         //HOTKEYS
         public static Keys ToggleKey = Keys.F7;
+        public static Keys ToggleDynamicCam = Keys.NumPad0;
+        public static Keys SaveSettings = Keys.NumPad5;
+        public static Keys MoveFoward = Keys.NumPad9;
+        public static Keys MoveBackward = Keys.NumPad7;
+        public static Keys MoveUp = Keys.NumPad8;
+        public static Keys MoveDown = Keys.NumPad2;
 
         //MOD SETTINGS
         public static bool _modEnabled;
+        public static float cameraZoom;
+        public static float camMinZoom = -9f;
+        public static float camMaxZoom = -6f;
+        public static float zoomSpeed = 0.02f;
+        public static float vehicleSpeed = 20f;
         public static float camX = -5f;
         public static float camY = -5f;
         public static float camZ = 1.5f;

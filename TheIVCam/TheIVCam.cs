@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GTA;
 using System.Windows.Forms;
 using System.IO;
-using System.Timers;
 
 namespace TheIVCam
 {
@@ -30,12 +25,12 @@ namespace TheIVCam
             {
                 if (Helper._modEnabled)
                 {
-                    if (Helper._speedHUD)
+                    if (Helper._speedHUD && Player.CanControlCharacter)
                     {
                         e.Graphics.Scaling = FontScaling.Pixel;
                         if (Helper.MPH)
                         {
-                            float speed = Helper.VehSpeed * 2.2f;
+                            float speed = Helper.VehSpeed;
 
                             e.Graphics.DrawText("Speed: " + speed.ToString("00") + " MPH" , Helper.TextPosition(0, 0).X, Helper.TextPosition(0, 0).Y, Helper.FontColor(), Helper.SpeedTextFont);
                             Helper.KPH = false;
@@ -58,23 +53,24 @@ namespace TheIVCam
 
         private void StaticCamera_Tick(object sender, EventArgs e)
         {
-            if (Player.Character.isInVehicle())
+            if (Player.Character.isInVehicle() && Player.CanControlCharacter)
             {
                 if (Helper._modEnabled)
                 {
                     Helper.VehSpeed = Player.Character.CurrentVehicle.Speed;
                     if (Helper.DynamicCam)
                     {
-                        if (Helper.VehSpeed > 20f && Helper.camX > -7f && Helper.camY > -7f)
+                        if (Helper.VehSpeed > Helper.vehicleSpeed)
                         {
-                            Helper.camX = Helper.camX - 0.01f;
-                            Helper.camY = Helper.camY - 0.01f;
+                            Helper.cameraZoom -= Helper.zoomSpeed;
                         }
-                        else if (Helper.VehSpeed > 0f && Helper.VehSpeed < 70f && Helper.camX < -5f && Helper.camY < -5f)
+                        else if (Helper.VehSpeed < Helper.vehicleSpeed)
                         {
-                            Helper.camX = Helper.camX + 0.02f;
-                            Helper.camY = Helper.camY + 0.02f;
+                            Helper.cameraZoom += Helper.zoomSpeed;
                         }
+                        Helper.cameraZoom = Helper.cameraZoom < Helper.camMinZoom ? Helper.camMinZoom : (Helper.cameraZoom > Helper.camMaxZoom ? Helper.camMaxZoom : Helper.cameraZoom);
+                        Helper.camX = Helper.cameraZoom;
+                        Helper.camY = Helper.cameraZoom;
                     }
                     UpdateModCam();
                 }
@@ -108,6 +104,74 @@ namespace TheIVCam
                 else
                 {
                     Helper.ShowSubtitle("TheIVCam: You need to be in vehicle in order to activate the camera.");
+                }
+            }
+            if (e.Key == Helper.MoveFoward)
+            {
+                if (Helper._modEnabled && !Helper.DynamicCam)
+                {
+                    Helper.camX += 0.1f;
+                    Helper.camY += 0.1f;
+                    Helper.camMaxZoom = Helper.camX;
+                    Helper.camMinZoom = Helper.camX - 2f;
+                    Helper.ShowSubtitle("Camera Forward: " + Helper.camX.ToString());
+                }
+            }
+            if (e.Key == Helper.MoveBackward)
+            {
+                if (Helper._modEnabled && !Helper.DynamicCam)
+                {
+                    Helper.camX -= 0.1f;
+                    Helper.camY -= 0.1f;
+                    Helper.camMaxZoom = Helper.camX;
+                    Helper.camMinZoom = Helper.camX - 2f;
+                    Helper.ShowSubtitle("Camera Backward: " + Helper.camX.ToString());
+                }
+            }
+            if (e.Key == Helper.MoveUp)
+            {
+                if (Helper._modEnabled && !Helper.DynamicCam)
+                {
+                    Helper.camZ += 0.1f;
+                    Helper.ShowSubtitle("Camera Up: " + Helper.camZ.ToString());
+                }
+            }
+            if (e.Key == Helper.MoveDown)
+            {
+                if (Helper._modEnabled && !Helper.DynamicCam)
+                {
+                    Helper.camZ -= 0.1f;
+                    Helper.ShowSubtitle("Camera Down: " + Helper.camZ.ToString());
+                }
+            }
+            if (e.Key == Helper.SaveSettings)
+            {
+                if (Helper._modEnabled)
+                {
+                    SaveSettings();
+                }
+                else
+                {
+                    Helper.ShowSubtitle("TheIVCam: You need to have mod camera active in order to save the settings.");
+                }
+            }
+            if (e.Key == Helper.ToggleDynamicCam)
+            {
+                if (Helper._modEnabled)
+                {
+                    Helper.DynamicCam = !Helper.DynamicCam;
+                    if (Helper.DynamicCam)
+                    {
+                        Helper.ShowSubtitle("TheIVCam: Dynamic Camera enabled");
+                    }
+                    else
+                    {
+                        Helper.ShowSubtitle("TheIVCam: Dynamic Camera disabled");
+                    }
+                }
+                else
+                {
+                    Helper.ShowSubtitle("TheIVCam: You need to have mod camera active in order to activate dynamic camera.");
                 }
             }
         }
@@ -152,6 +216,7 @@ namespace TheIVCam
             }
             Helper.ModCamActive = false;
             Helper._modEnabled =false;
+            SaveSettings();
             Helper.ShowSubtitle("TheIVCam: Disabled");
         }
 
@@ -161,13 +226,19 @@ namespace TheIVCam
             {
                 Settings.Load();
                 Helper.ToggleKey = Settings.GetValueKey("ToggleMod", "HOTKEYS", Keys.F7);
-                Helper.camX = Settings.GetValueFloat("CamLeftRight", "SETTINGS", -5f);
-                Helper.camY = Settings.GetValueFloat("CamForwardBack", "SETTINGS", -5f);
-                Helper.camZ = Settings.GetValueFloat("CamUpDown", "SETTINGS", 1.5f);
-                Helper._speedHUD = Settings.GetValueBool("SpeedHUD", "SETTINGS", true);
-                Helper.MPH = Settings.GetValueBool("MPH", "SETTINGS", false);
-                Helper.KPH = Settings.GetValueBool("KMH", "SETTINGS", true);
-                Helper.DynamicCam =  Settings.GetValueBool("DynamicCam", "SETTINGS", true);
+                Helper.ToggleDynamicCam = Settings.GetValueKey("ToggleDynamicCam", "HOTKEYS", Keys.NumPad0);
+                Helper.SaveSettings = Settings.GetValueKey("SaveSettings", "HOTKEYS", Keys.NumPad5);
+                Helper.MoveFoward =  Settings.GetValueKey("MoveForward", "HOTKEYS", Keys.NumPad9);
+                Helper.MoveBackward = Settings.GetValueKey("MoveBackwards", "HOTKEYS", Keys.NumPad7);
+                Helper.MoveUp = Settings.GetValueKey("MoveUp", "HOTKEYS", Keys.NumPad8);
+                Helper.MoveDown = Settings.GetValueKey("MoveDown", "HOTKEYS", Keys.NumPad2);
+                Helper._speedHUD = Settings.GetValueBool("SpeedHUD", "SETTINGS", Helper._speedHUD);
+                Helper.MPH = Settings.GetValueBool("MPH", "SETTINGS", Helper.MPH);
+                Helper.KPH = Settings.GetValueBool("KMH", "SETTINGS", Helper.KPH);
+                Helper.DynamicCam =  Settings.GetValueBool("DynamicCam", "SETTINGS", Helper.DynamicCam);
+                Helper.camX = Settings.GetValueFloat("PosForwardBack", "POSITION", Helper.camX);
+                Helper.camY = Settings.GetValueFloat("PosForwardBack", "POSITION", Helper.camY);
+                Helper.camZ = Settings.GetValueFloat("PosUpDown", "POSITION", Helper.camZ);
                 Helper.ShowSubtitle("TheIVCam: Settings Loaded");
             }
             else
@@ -178,13 +249,18 @@ namespace TheIVCam
         private void SaveSettings()
         {
             Settings.SetValue("ToggleMod", "HOTKEYS", Keys.F7);
-            Settings.SetValue("CamLeftRight", "SETTINGS", -5f);
-            Settings.SetValue("CamForwardBack", "SETTINGS", -5f);
-            Settings.SetValue("CamUpDown", "SETTINGS", 1.5f);
-            Settings.SetValue("SpeedHUD", "SETTINGS", true);
-            Settings.SetValue("MPH", "SETTINGS", false);
-            Settings.SetValue("KMH", "SETTINGS", true);
-            Settings.SetValue("DynamicCam", "SETTINGS", true);
+            Settings.SetValue("ToggleDynamicCam", "HOTKEYS", Keys.NumPad0);
+            Settings.SetValue("SaveSettings", "HOTKEYS", Keys.NumPad5);
+            Settings.SetValue("MoveForward", "HOTKEYS", Keys.NumPad9);
+            Settings.SetValue("MoveBackwards", "HOTKEYS", Keys.NumPad7);
+            Settings.SetValue("MoveUp", "HOTKEYS", Keys.NumPad8);
+            Settings.SetValue("MoveDown", "HOTKEYS", Keys.NumPad2);
+            Settings.SetValue("SpeedHUD", "SETTINGS", Helper._speedHUD);
+            Settings.SetValue("MPH", "SETTINGS", Helper.MPH);
+            Settings.SetValue("KMH", "SETTINGS", Helper.KPH);
+            Settings.SetValue("DynamicCam", "SETTINGS", Helper.DynamicCam);
+            Settings.SetValue("PosForwardBack", "POSITION", Helper.camX);
+            Settings.SetValue("PosUpDown", "POSITION", Helper.camZ);
             Settings.Save();
             Helper.ShowSubtitle("TheIVCam: Settings Saved");
         }

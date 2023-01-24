@@ -49,7 +49,11 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ScriptHookDotNet">
+    <Reference Include="NativeUI">
+      <HintPath>..\Refrences\NativeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptHookDotNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Refrences\ScriptHookDotNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
